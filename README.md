@@ -22,7 +22,7 @@ External-DNS can be used to create DNS records, but as of this moment (2020-OCT-
 
 # The solution
 
-External-DNS can be used to create/maintain MX records via its CRD mechanism.
+External-DNS can be used to create/maintain "A" records via its CRD mechanism, using a specific hostname within the domain. The DNS administrator can manually create an "MX" record beforehand (pointing to the hostname that the "A" record will define) so when the "A" record gets defined, the whole lookup mechanism starts working.
 
 In order to create the necessary External-DNS CRD object, a custom operator needs to listen to Mailu pod scheduling events and maintain the necessary CRD. In turn, External-DNS will detect the changes in the CRD and maintain the DNS records.
 
