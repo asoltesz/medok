@@ -35,7 +35,7 @@ then
     eval $(minikube docker-env)
 
     # Building the developer image into minikube
-    docker build -f src/main/docker/Dockerfile.fast-jar -t asoltesz/medok:develop .
+    docker build -f src/main/docker/Dockerfile.fast-jar -t soltesza/medok:develop .
 fi
 
 cd deployment/devmode

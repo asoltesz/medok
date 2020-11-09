@@ -15,7 +15,7 @@ spec:
             serviceAccountName: medok
             containers:
             - name: medok
-              image: asoltesz/medok:develop
+              image: soltesza/medok:develop
               imagePullPolicy: IfNotPresent
               env:
               - name: QUARKUS_LAUNCH_DEVMODE

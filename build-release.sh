@@ -8,9 +8,9 @@ set -e
 ./mvnw package -Pnative -Dnative-image.docker-build=true -Dquarkus.package.type=native
 
 # Building the docker image
-docker build -f src/main/docker/Dockerfile.native -t asoltesz/medok:${MEDOK_VERSION} .
+docker build -f src/main/docker/Dockerfile.native -t soltesza/medok:${MEDOK_VERSION} .
 
 echo
-echo "Image built: asoltesz/medok:${MEDOK_VERSION}"
+echo "Image built: soltesza/medok:${MEDOK_VERSION}"
 echo
 echo "Build success."

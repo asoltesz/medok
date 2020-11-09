@@ -6,8 +6,8 @@ set -e
 . build-config.sh
 
 echo
-echo "Image to be pushed to Docker HUB: asoltesz/medok:${MEDOK_VERSION}"
+echo "Image to be pushed to Docker HUB: soltesza/medok:${MEDOK_VERSION}"
 echo
 
-docker push asoltesz/medok:${MEDOK_VERSION}
+docker push soltesza/medok:${MEDOK_VERSION}
 
