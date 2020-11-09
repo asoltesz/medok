@@ -1,0 +1,6 @@
+*
+!src/main/docker/libsunec.so
+!target/*-runner
+!target/*.jar
+!target/lib/*
+!target/quarkus-app/*
