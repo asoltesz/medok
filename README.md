@@ -18,7 +18,7 @@ When Mailu (or any other email service) is deployed on Kubernetes, several probl
 - The Mailu Frontend pod may be rescheduled onto another host (e.g.: the original host goes down). The MX record needs to be quickly updated to avoid email service outage. 
 - Due to Kubernetes networking semantics, [preserving the Source IP](https://kubernetes.io/docs/tutorials/services/source-ip/) this need can only be served with directly reserving ports on the host. Standard, externally-exposable Kubernetes mechanisms (NodePort, LoadBalancer) either do NAT (which looses the Source IP), or has other problems (e.g.: is available only in managed clusters like GCE or Azure) 
 
-External-DNS can be used to create DNS records, but as of this moment (2020-OCT-20), it cannot be configured to .
+External-DNS can be used to create DNS records, but as of this moment (2020-OCT-20), it cannot be configured to properly expose the ExternalIP of the node running the Mailu front pod with the hostPort entries (and InternalIPs are useless for this purpose).
 
 # The solution
 
