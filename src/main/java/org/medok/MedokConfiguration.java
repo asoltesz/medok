@@ -12,7 +12,7 @@ public class MedokConfiguration {
     public String mailuNamespace = "mailu";
 
     /**
-     * The fully qualified name for the MX DNS entry that should
+     * The fully qualified name for the A DNS entry that should
      * point to the host/node running the Mailu Front pod.
      */
     public String mailuServerFqn = "mailu.example.com";
