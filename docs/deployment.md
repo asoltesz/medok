@@ -39,7 +39,7 @@ spec:
             serviceAccountName: medok
             containers:
             - name: medok
-              image: soltesza/medok:1.0.0-SNAPSHOT
+              image: soltesza/medok:1.0.0
               env:
               - name: MEDOK_NAMESPACE
                 value: "mailu"
