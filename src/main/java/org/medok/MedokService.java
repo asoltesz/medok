@@ -155,25 +155,28 @@ public class MedokService {
 
         log.info("Getting the External-DNS DNSEndpoint named 'medok' ");
 
-        ctx.dnsEndpointResource = endpointClient.withName("medok");
+        String name = "medok_" + config.mailuServerFqn;
+        name = name.replaceAll("[^\\p{IsAlphabetic}\\p{IsDigit}]", "-");
+
+        ctx.dnsEndpointResource = endpointClient.withName(name);
 
         ctx.dnsEndpoint = ctx.dnsEndpointResource.get();
 
         if (ctx.dnsEndpoint == null) {
 
-            log.info("DNSEndpoint object 'medok' is NOT present ");
+            log.info("DNSEndpoint object '" + name + "' is NOT present ");
 
             DNSEndpointResource epr = new DNSEndpointResource();
             ctx.dnsEndpoint = epr;
             epr.setSpec(new DNSEndpointResourceSpec());
             epr.getSpec().setEndpoints(new HashSet<>());
-            epr.getMetadata().setName("medok");
+            epr.getMetadata().setName(name);
             epr.setKind("DNSEndpoint");
         }
 
         Set<Endpoint> endpoints = ctx.dnsEndpoint.getSpec().getEndpoints();
 
-        log.info("Found 'medok' DNSEndpoint. Embedded endpoints: " + endpoints.size() );
+        log.info("Found '" + name + "' DNSEndpoint. Embedded endpoints: " + endpoints.size() );
 
         for (Endpoint ep : endpoints) {
 
